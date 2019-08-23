@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+$font-family: 'Roboto', sans-serif;
+
+$colors: (
+  grey: #818080,
+  grey_dark: #2D2C2C,
+  grey_light: #434343,
+  orange: #FBA43E,
+  white: #FFF
+);
+
+@function color($color-item) {
+  @return map-get($colors, $color-item)
+};
+
+@mixin size($w, $h:$w) {
+  width: $w;
+  height: $h;
+};
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+@mixin backgroundImage($url) {
+  background: center center url($url) no-repeat;
+  background-size: contain;
+}
+
+@mixin scrollBar() {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 12px;
+    box-shadow: inset 0 0 5px color(grey);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: color(orange);
+    border-radius: 12px;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
