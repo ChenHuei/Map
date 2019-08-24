@@ -41,6 +41,7 @@ export default {
   @include flexCenter;
   justify-content: space-between;
   padding: 8px 16px;
+  background-color: color(grey);
 }
 
 ul {

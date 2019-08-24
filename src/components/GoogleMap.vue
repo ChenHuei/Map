@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="google-map">
     <div>
       <h2>Search and add a pin</h2>
       <label>
@@ -67,3 +67,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "../styles/import";
+
+.google-map {
+  @include size(calc(100% - 20rem), 100%);
+}
+</style>

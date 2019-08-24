@@ -1,16 +1,24 @@
 <template>
   <div class="home">
-    <googleMap/>
+    <Header/>
+    <div class="container">
+      <Sidebar/>
+      <googleMap/>
+    </div>
   </div>
 </template>
 
 <script>
 
+import Header from '@/components/Header'
+import Sidebar from '@/components/Sidebar'
 import googleMap from '@/components/GoogleMap'
 
 export default {
   name: 'home',
   components: {
+    Header,
+    Sidebar,
     googleMap
   }
 }
@@ -20,6 +28,10 @@ export default {
 @import "../styles/import";
 
 .home {
-  @include size(100vw, 100vh);
+  @include size(100%);
+  > .container {
+    @include size(100%, calc(100% - 56px));
+    @include flexCenter;
+  }
 }
 </style>
